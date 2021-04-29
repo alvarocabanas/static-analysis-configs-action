@@ -5,6 +5,14 @@ inputs:
     description: 'Name of the repository to check'
     required: true
     default: 'nri-test'
+  semgrep:
+    description: 'Get semgrep configuration'
+    required: false
+    default: 'false'
+  golangci-lint:
+    description: 'Get golangci-lint configuration'
+    required: false
+    default: 'false'
 
 runs:
   using: "composite"
@@ -13,3 +21,5 @@ runs:
       shell: bash
       env:
         REPOSITORY: ${{ inputs.repository }}
+        SEMGREP: ${{ inputs.semgrep }}
+        GOLANGCI-LINT: ${{ inputs.golangci-lint }}
