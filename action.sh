@@ -7,4 +7,5 @@ set -o pipefail
 [[ -n $GITHUB_ACTION_PATH ]] || GITHUB_ACTION_PATH=$(pwd)
 
 echo "ℹ️ Copying semgrep file to repo root directory"
-cp semgrep/${INTEGRATION}.yml .semgrep.yml
+cp "$GITHUB_ACTION_PATH"/semgrep/${INTEGRATION}.yml .semgrep.yml
+cp "$GITHUB_ACTION_PATH"/semgrep/.semgrepignore .semgrepignore
