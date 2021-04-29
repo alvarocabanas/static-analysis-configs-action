@@ -1,0 +1,15 @@
+name: 'Get static analysis tools configs'
+description: 'This action gets the required configs for the static analysis tools used to check nri-integrations'
+inputs:
+  integration:
+    description: 'Name of the integration to check'
+    required: true
+    default: 'nri-test'
+
+runs:
+  using: "composite"
+  steps: 
+    - run: $GITHUB_ACTION_PATH/action.sh
+      shell: bash
+      env:
+        INTEGRATION: ${{ inputs.integration }}
