@@ -9,11 +9,6 @@ linters-settings:
   goconst:
     min-len: 2
     min-occurrences: 2
-  gocritic:
-    enabled-tags:
-      - rangeValCopy
-    disabled-checks:
-      - regexpMust
   gocyclo:
     min-complexity: 10
   golint:
