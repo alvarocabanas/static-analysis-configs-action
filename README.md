@@ -1,6 +1,6 @@
 # static-analysis-configs-action
 
-An action to get the required config files for the static analysis tools used to check nri-integrations.
+An action to get the required config files for the static analysis tools used to check nri-integrations and agent.
 
 ## Usage
 
@@ -9,5 +9,5 @@ Usage and defaults:
 - name: Get static analysis config files
   uses: alvarocabanas/static-analysis-configs-action@v1
   with:
-    integration: 'nri-${{ env.INTEGRATION }}' # Required, with nri- prefix
+    repository: 'nri-elasticsearch' # Required, name of the repository (nri-jmx, nri-nginx, infrastructure-agent, ...)
 ```
