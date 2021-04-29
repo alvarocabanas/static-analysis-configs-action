@@ -19,7 +19,7 @@ if [ "${SEMGREP}" = "true" ]; then
 fi
 
 
-if [ "${GOLANGCI-LINT}" = "true" ]; then
+if [ "${GOLANGCI_LINT}" = "true" ]; then
   if [[ -f "$GITHUB_ACTION_PATH"/golangci-lint/${REPOSITORY}.yml ]]
   then
       echo "ℹ️ Copying golangci-lint files to repo root directory"

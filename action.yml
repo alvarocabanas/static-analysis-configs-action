@@ -22,4 +22,4 @@ runs:
       env:
         REPOSITORY: ${{ inputs.repository }}
         SEMGREP: ${{ inputs.semgrep }}
-        GOLANGCI-LINT: ${{ inputs.golangci-lint }}
+        GOLANGCI_LINT: ${{ inputs.golangci-lint }}
