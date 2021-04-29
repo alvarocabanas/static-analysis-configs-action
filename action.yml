@@ -1,8 +1,8 @@
 name: 'Get static analysis tools configs'
 description: 'This action gets the required configs for the static analysis tools used to check nri-integrations'
 inputs:
-  integration:
-    description: 'Name of the integration to check'
+  repository:
+    description: 'Name of the repository to check'
     required: true
     default: 'nri-test'
 
