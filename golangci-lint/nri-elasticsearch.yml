@@ -6,9 +6,9 @@ linters-settings:
     statements: 50
   gci:
     local-prefixes: github.com/golangci/golangci-lint
-  goconst:
-    min-len: 2
-    min-occurrences: 2
+#  goconst:
+#    min-len: 2
+#    min-occurrences: 2
   gocyclo:
     min-complexity: 10
   golint:
@@ -54,7 +54,6 @@ linters:
     - exhaustive
     - funlen
     - gochecknoinits
-    - goconst
     - gocritic
     - gocyclo
     - gofmt
@@ -66,11 +65,9 @@ linters:
     - gosimple
     - govet
     - ineffassign
-    - lll
     - misspell
-    - nakedret
+    - nilerr
     - noctx
-    - nolintlint
     - rowserrcheck
     - staticcheck
     - structcheck
@@ -87,11 +84,15 @@ linters:
   # - scopelint
   # - gochecknoglobals
   # - gocognit
+  # - goconst   #looks for repetitions of variables that should go on constant
   # - godot
   # - godox
-  # - goerr113
+  # - goerr113    #only add if go > 1.13
+  # - errorlint   #only add if go > 1.13
   # - interfacer
   # - maligned
+  # - nakedret
+  # - nolintlint
   # - nestif
   # - prealloc
   # - testpackage
