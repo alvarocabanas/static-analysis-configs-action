@@ -7,25 +7,23 @@ set -o pipefail
 [[ -n $GITHUB_ACTION_PATH ]] || GITHUB_ACTION_PATH=$(pwd)
 
 if [ "${SEMGREP}" = "true" ]; then
+  echo "ℹ️ Copying semgrep files to repo root directory"
   if [[ -f "$GITHUB_ACTION_PATH"/semgrep/${REPOSITORY}.yml ]]
   then
-      echo "ℹ️ Copying semgrep files to repo root directory"
       cp "$GITHUB_ACTION_PATH"/semgrep/${REPOSITORY}.yml .semgrep.yml
-      cp "$GITHUB_ACTION_PATH"/semgrep/.semgrepignore .semgrepignore
   else
-    echo "❌ Semgrep file does not exist for REPOSITORY '${REPOSITORY}'"
-    return 1
+      cp "$GITHUB_ACTION_PATH"/semgrep/default.yml .semgrep.yml
   fi
+  cp "$GITHUB_ACTION_PATH"/semgrep/.semgrepignore .semgrepignore
 fi
 
 
 if [ "${GOLANGCI_LINT}" = "true" ]; then
+  echo "ℹ️ Copying golangci-lint files to repo root directory"
   if [[ -f "$GITHUB_ACTION_PATH"/golangci-lint/${REPOSITORY}.yml ]]
   then
-      echo "ℹ️ Copying golangci-lint files to repo root directory"
       cp "$GITHUB_ACTION_PATH"/golangci-lint/${REPOSITORY}.yml .golangci.yml
   else
-    echo "❌ golangci-lint file does not exist for REPOSITORY '${REPOSITORY}'"
-    return 1
+      cp "$GITHUB_ACTION_PATH"/golangci-lint/default.yml .golangci.yml
   fi
 fi
