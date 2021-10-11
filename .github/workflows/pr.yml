@@ -1,0 +1,32 @@
+###  On Pr creation against main
+###
+###        checking_pr                 
+###   +-----------------------+          
+###   |                       |                                                       
+###   | Runs sanity checks    |                                                         
+###   |                       |                                                          
+###   | Tests Packages linux  |                      
+###   | if enabled            |                            
+###   |                       | 
+###   +-----------------------+      
+name: Preflight
+
+on:
+  push:
+  pull_request:
+    branches: [ main ]
+
+env:
+  GO_VERSION: '1.16'
+
+###
+###   Checking PR # Checks the file and the info provided when an exporter is modified
+###
+jobs:
+  checking_pr:
+    name: Preflight
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - run: env
