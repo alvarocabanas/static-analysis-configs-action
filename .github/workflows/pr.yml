@@ -1,27 +1,14 @@
-###  On Pr creation against main
-###
-###        checking_pr                 
-###   +-----------------------+          
-###   |                       |                                                       
-###   | Runs sanity checks    |                                                         
-###   |                       |                                                          
-###   | Tests Packages linux  |                      
-###   | if enabled            |                            
-###   |                       | 
-###   +-----------------------+      
 name: Preflight
 
 on:
   push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
 env:
   GO_VERSION: '1.16'
 
-###
-###   Checking PR # Checks the file and the info provided when an exporter is modified
-###
 jobs:
   checking_pr:
     name: Preflight
