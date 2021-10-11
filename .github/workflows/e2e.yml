@@ -1,4 +1,4 @@
-name: Testing
+name: Test
 
 on:
   workflow_run:
@@ -12,6 +12,8 @@ jobs:
     name: Test Step
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+      - run: git branch
       - run: env
