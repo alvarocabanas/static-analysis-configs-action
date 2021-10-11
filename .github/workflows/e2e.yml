@@ -6,7 +6,6 @@ on:
       - Preflight
     types:
       - completed
-    branches: [ main ]
 
 jobs:
   test-job:
