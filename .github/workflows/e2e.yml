@@ -4,7 +4,6 @@ on:
   workflow_run:
     workflows:
       - Preflight
-    branches: [main]
     types:
       - completed
       - requested
