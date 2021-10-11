@@ -11,6 +11,6 @@ jobs:
     name: Preflight
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout code great again
         uses: actions/checkout@v2
       - run: env
